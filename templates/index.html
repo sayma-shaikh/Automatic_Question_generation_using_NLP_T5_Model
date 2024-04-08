@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question Generation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        form {
+            margin-top: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #333;
+        }
+        .generated-questions {
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        pre {
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            white-space: pre-wrap;
+        }
+
+        textarea, input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Question Generation</h1>
+        <form action="/generate" method="post">
+            <label for="context">Enter Context:</label><br>
+            <textarea id="context" name="context" rows="10" cols="50"></textarea><br>
+            <label for="num_questions">Number of Questions:</label>
+            <input type="number" id="num_questions" name="num_questions" value="5"><br>
+            <label>Select Question Type:</label><br>
+            <input type="radio" id="MCQ" name="question_type" value="MCQ">
+            <label for="MCQ">Multiple Choice Questions (MCQ)</label><br>
+            <input type="radio" id="FillInTheBlanks" name="question_type" value="Fill in the Blanks">
+            <label for="FillInTheBlanks">Fill in the Blanks</label><br>
+            <input type="radio" id="Definition" name="question_type" value="Definition">
+            <label for="Definition">Definition</label><br>
+            <input type="radio" id="Synonyms" name="question_type" value="Synonyms">
+            <label for="Synonyms">Synonyms</label><br>
+            <input type="radio" id="Antonyms" name="question_type" value="Antonyms">
+            <label for="Antonyms">Antonyms</label><br>
+            <input type="submit" value="Generate Questions">
+        </form>
+        {% if output %}
+        <hr>
+        <div class="container">
+            <h2>Generated Questions</h2>
+            <div class="generated-questions">
+                <pre>{{ output }}</pre>
+            </div>
+            {% endif %}
+        </div>
+</body>
+</html>
+
