@@ -1,3 +1,4 @@
+Python 3.10.2
 Flask
 Gunicorn
 qgg-utils @ git+https://github.com/p208p2002/qgg-utils.git@576998200d13a252eea6681a437c23e775e9d56e
