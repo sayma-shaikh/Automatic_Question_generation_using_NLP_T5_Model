@@ -1,9 +1,6 @@
 Python==3.10.2
 Flask
 Gunicorn
-qgg-utils @ git+https://github.com/p208p2002/qgg-utils.git@576998200d13a252eea6681a437c23e775e9d56e
-pke @ git+https://github.com/boudinfl/pke.git@8f1d05dcc52041c9920ba0f9d5231fe6086d12c4
-en-core-web-sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.3.0/en_core_web_sm-3.3.0-py3-none-any.whl
 Django
 flashtext==2.7
 git+https://github.com/boudinfl/pke.git
