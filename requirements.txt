@@ -1,4 +1,3 @@
-Python 3.10.2
 Flask
 Gunicorn
 # Django
