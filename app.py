@@ -7,13 +7,14 @@ from transformers import T5ForConditionalGeneration, T5Tokenizer
 # Import other necessary libraries
 
 from question_generation import generate_MCQs_questions, generate_fill_in_the_blanks,get_antonyms, get_synonyms ,get_word_definition
-
+from transformers import DistilBertForSequenceClassification
 
 
 app = Flask(__name__)
 
 # Initialize models and tokenizers
-summary_model = T5ForConditionalGeneration.from_pretrained('t5-base')
+# summary_model = T5ForConditionalGeneration.from_pretrained('t5-base')
+summary_model = DistilBertForSequenceClassification.from_pretrained('distilbert-base-uncased')
 summary_tokenizer = T5Tokenizer.from_pretrained('t5-base', model_max_length=1024)
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 summary_model = summary_model.to(device)
@@ -56,3 +57,6 @@ def generate():
 
 # if __name__ == '__main__':
 #     app.run(host='127.0.0.1', port=5000)    
+
+
+
