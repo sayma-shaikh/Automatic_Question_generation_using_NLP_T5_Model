@@ -1,16 +1,9 @@
 Flask
 Gunicorn
-# Django
-# flashtext==2.7
-git+https://github.com/boudinfl/pke.git
+pke @ git+https://github.com/boudinfl/pke.git@8f1d05dcc52041c9920ba0f9d5231fe6086d12c4
 transformers==4.28.1
 sentencepiece==0.1.95
-# textwrap3==0.9.2
-# strsim==0.0.3
-# sense2vec==2.0.1
-# ipython-autotime
 sentence-transformers==2.2.2
 scipy==1.11.4
 nltk
-# rake-nltk
 spacy
